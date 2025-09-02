@@ -46,5 +46,4 @@ Este projeto implementa um **sistema de biblioteca** em **PostgreSQL** com supor
 ---
 
 ## 👨‍🎓 Autor
-- Nome: **Seu Nome Aqui**  
-- Matrícula: **000000**
+- Nome: **João Pedro Balduino Leitão**  
