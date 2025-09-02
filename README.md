@@ -20,7 +20,7 @@ Este projeto implementa um **sistema de biblioteca** em **PostgreSQL** com supor
 │   ├── 02_views.sql           # Views para consultas
 │   ├── 03_procedures.sql      # Procedures de manipulação
 │   ├── 04_tests.sql           # Testes das procedures e views
-│   └── 05_functions.sql       # Funções adicionais
+│   
 └── docs/
     ├── modelo_relacional.md   # Explicação das tabelas e relacionamentos
     ├── modelo_relacional.puml # Diagrama em PlantUML
