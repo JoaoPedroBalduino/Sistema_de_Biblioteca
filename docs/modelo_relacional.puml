@@ -1,0 +1,50 @@
+@startuml
+hide circle
+skinparam linetype ortho
+
+entity "autor" as autor {
+  * id : SERIAL <<PK>>
+  --
+  nome : VARCHAR(100)
+}
+
+entity "livro" as livro {
+  * id : SERIAL <<PK>>
+  --
+  titulo : VARCHAR(150)
+  id_autor : INT <<FK>>
+  ano_publicacao : INT
+}
+
+entity "usuario" as usuario {
+  * id : SERIAL <<PK>>
+  --
+  nome : VARCHAR(100)
+}
+
+entity "emprestimo" as emprestimo {
+  * id : SERIAL <<PK>>
+  --
+  id_usuario : INT <<FK>>
+  id_livro : INT <<FK>>
+  data_emprestimo : DATE
+  data_devolucao : DATE
+  valor : NUMERIC(10,2)
+}
+
+' Relacionamentos com cardinalidade (1 - N)
+autor ||--o{ livro : "1:N
+escreve"
+usuario ||--o{ emprestimo : "1:N
+realiza"
+livro ||--o{ emprestimo : "1:N
+é emprestado em"
+
+note right of emprestimo
+  Observações:
+  - Chaves estrangeiras garantem integridade referencial.
+  - 'valor' opcional (pode ser NULL se não definido).
+  - Para histórico, emprestimos mantêm relacionamento com usuário e livro.
+end note
+
+@enduml
